@@ -3,21 +3,21 @@ import { FcGoogle } from "react-icons/fc";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export default function Cadastro() {
+export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleVisibility = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const cadastrar = () => {
-    alert("Cadastrado");
+  const logar = () => {
+    alert("Logando");
   };
 
   return (
     <div className="bg-blue-300 h-screen flex justify-center items-center">
       <div className="bg-[url(/grainient.png)] bg-cover bg-center text-center rounded-3xl shadow-2xl pt-8 w-3/4 max-w-125">
-        <span className="text-3xl text-white font-bold">Crie sua conta</span>
+        <span className="text-3xl text-white font-bold">Faça seu login</span>
 
         <div className="flex flex-col mt-8 bg-white rounded-3xl p-4 w-full justify-center">
           <button
@@ -27,24 +27,12 @@ export default function Cadastro() {
             className="h-12 mt-5 border border-gray-300 hover:border-black cursor-pointer rounded-3xl flex justify-center items-center gap-3"
           >
             <FcGoogle className="h-6 w-6" />
-            <span>Cadastre-se com o Google</span>
+            <span>Faça login com o Google</span>
           </button>
 
           <span className="mt-5 mb-5">ou</span>
 
-          <form onSubmit={cadastrar} className="flex flex-col">
-            <div className="w-full flex gap-1">
-              <input
-                type="text"
-                className="w-1/2 bg-gray-100 h-12 pl-4 rounded-tl-3xl rounded-bl-3xl"
-                placeholder="Primeiro nome"
-              />
-              <input
-                type="text"
-                className="w-1/2 bg-gray-100 h-12 pl-4 rounded-tr-3xl rounded-br-3xl"
-                placeholder="Sobrenome"
-              />
-            </div>
+          <form onSubmit={logar} className="flex flex-col">
 
             <input
               type="email"
@@ -68,27 +56,23 @@ export default function Cadastro() {
               type="submit"
               className="h-12 bg-black text-white font-bold rounded-3xl mt-5 cursor-pointer transition-colors hover:bg-white hover:text-black hover:border"
             >
-              Cadastrar
+              Entrar
             </button>
           </form>
 
           <span className="mt-5 text-sm">
-            Ao criar uma conta no Letrarium, você concorda com nossos <br />
+            Esqueceu sua senha?{" "}
             <Link className="font-semibold no-underline hover:underline" to="/">
-              Termos de Uso
-            </Link>{" "}
-            e{" "}
-            <Link className="font-semibold no-underline hover:underline" to="/">
-              Política de Privacidade
+              Crie uma nova
             </Link>
             .
           </span>
 
           <span className="font-semibold mt-6">
-            Já possui uma conta?{" "}
-            <Link to="/" className="underline">
+            È novo por aqui?{" "}
+            <Link to="/cadastro" className="underline">
               {" "}
-              Faça login aqui
+              Cadastre-se
             </Link>
           </span>
         </div>
